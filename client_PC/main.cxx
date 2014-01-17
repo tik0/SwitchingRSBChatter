@@ -25,6 +25,28 @@ void printMessage(rsb::EventPtr event) {
 int main(int argc, char *argv[]) {
     string nick = "client_PC";
 
+    rsb::ParticipantConfig config;
+    rsc::runtime::Properties prop = config.getOptions();
+
+
+
+//    std::cout << prop << std::endl;
+//    config.setOptions(prop);
+
+    const std::string& transportName = "test";
+    config.Transport transport(transportName);
+
+    config.setOptions()
+
+    transport.printContents(std::cout);
+
+//    transport.setOptions()
+
+//    std::set<Transport> transports = config.getTransports(true);
+//    transports
+
+    std::cout << config.getTransports() << std::endl;
+
     rsb::Factory &factory = rsb::Factory::getInstance();
 
     rsb::Informer<string>::Ptr informer
@@ -32,6 +54,7 @@ int main(int argc, char *argv[]) {
     rsb::ListenerPtr listener = factory.createListener("/chat/text");
     listener->addFilter(rsb::filter::FilterPtr(new rsb::filter::OriginFilter(informer->getId(), true)));
     listener->addHandler(rsb::HandlerPtr(new rsb::EventFunctionHandler(&printMessage)));
+
 
     while (true) {
         cout << "> ";
