@@ -40,10 +40,10 @@ target_link_libraries (
     boost_filesystem
     pthread
     # -- rsb
-    rsb                                    # Maybe you need to create a link: "ln -s librsb.so.0.9 librsb.so"
+    :librsb.so.0.9                          # Maybe you need to create a link: "ln -s librsb.so.0.9 librsb.so" if you want to link against "rsb"
 #     rsbts
 #     rsbsimplebuffer
-    rsc                                    # Maybe you need to create a link: "ln -s librsc0.9.so.0.9 librsc.so"
+    :librsc0.9.so.0.9                       # Maybe you need to create a link: "ln -s librsc0.9.so.0.9 librsc.so" if you want to link against "rsc"
     # -- OpenCV
     opencv_core
     opencv_highgui
