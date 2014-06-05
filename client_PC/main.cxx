@@ -25,29 +25,6 @@ void printMessage(rsb::EventPtr event) {
 int main(int argc, char *argv[]) {
     string nick = "client_PC";
 
-//    rsb::ge
-//    rsb::ParticipantConfig config;
-//    rsc::runtime::Properties prop = config.getOptions();
-
-
-
-//    std::cout << prop << std::endl;
-//    config.setOptions(prop);
-
-//    const std::string& transportName = "test";
-//    config.Transport transport(transportName);
-
-//    config.setOptions()
-
-//    transport.printContents(std::cout);
-
-//    transport.setOptions()
-
-//    std::set<Transport> transports = config.getTransports(true);
-//    transports
-
-//    std::cout << config.getTransports() << std::endl;
-
     rsb::Factory &factory = rsb::Factory::getInstance();
 
     // Get the global participant config as a template
